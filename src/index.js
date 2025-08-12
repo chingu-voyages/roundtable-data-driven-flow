@@ -24,9 +24,21 @@ console.log(chalk.white(`You selected `), chalk.green(`${(message)} `))
 // Call the selected function & display the result
 if (functionNo >= 1 && functionNo <= routes.length) {
   console.log(chalk.white(`\n----------------------------------------`))
+
   const selectedFunction = routes[functionNo - 1].handler
-  const result = selectedFunction()
+  let result = undefined
+  // If the selected function requires dynamic parameters apply them to the function call
+  // Otherwise, call it with no parameters
+  if (routes[functionNo - 1].dynamicParms) {
+    const dateToConvert = prompt(chalk.white(`Enter a date to convert to ISO format (YYYY-MM-DD): `))
+    const parms = [new Date(dateToConvert)]
+    console.log(chalk.white(`\nConverting date: `), chalk.green(`${parms[0]}`))
+    result = selectedFunction.apply(null, parms)
+  } else {
+    result = selectedFunction()
+  }
+
   console.log(chalk.white(`\nResult from `), 
-    chalk.white(`${routes[functionNo - 1].function} - ${routes[functionNo - 1].description}: `),
+    chalk.white(`${routes[functionNo - 1].function}: ${routes[functionNo - 1].description}: `),
     chalk.green(`${result}`))
 }
