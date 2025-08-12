@@ -1,0 +1,25 @@
+{
+  "name": "roundtable-data-driven-flow",
+  "version": "1.0.0",
+  "description": "Chingu Roundtable - Data-driven Flow of Control",
+  "main": "src/ßindex.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/roundtable-data-driven-flow.git"
+  },
+  "author": "Jim Medlock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/roundtable-data-driven-flow/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/roundtable-data-driven-flow#readme",
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "prompt-sync": "^4.2.0"
+  }
+}
