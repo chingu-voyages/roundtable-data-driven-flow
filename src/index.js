@@ -36,6 +36,7 @@ if (functionNo >= 1 && functionNo <= routes.length) {
     // The apply function allows us to call the function with an array of 
     // parameters that have been dynamically generated. For more information:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+    // Also note we could have used the spread operator here, but apply is more explicit
     result = selectedFunction.apply(null, parms) // Call the function with parameters
   } else {
     result = selectedFunction() // Call the function with no parameters
