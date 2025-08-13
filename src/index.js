@@ -33,9 +33,12 @@ if (functionNo >= 1 && functionNo <= routes.length) {
     const dateToConvert = prompt(chalk.white(`Enter a date to convert to ISO format (YYYY-MM-DD): `))
     const parms = [new Date(dateToConvert)]
     console.log(chalk.white(`\nConverting date: `), chalk.green(`${parms[0]}`))
-    result = selectedFunction.apply(null, parms)
+    // The apply function allows us to call the function with an array of 
+    // parameters that have been dynamically generated. For more information:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+    result = selectedFunction.apply(null, parms) // Call the function with parameters
   } else {
-    result = selectedFunction()
+    result = selectedFunction() // Call the function with no parameters
   }
 
   console.log(chalk.white(`\nResult from `), 
